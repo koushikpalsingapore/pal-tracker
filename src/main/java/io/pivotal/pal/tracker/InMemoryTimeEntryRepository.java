@@ -38,20 +38,14 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
         return result;
     }
 
-     /*public void update() throws Exception {
-        InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
-        TimeEntry created = repo.create(new TimeEntry(123L, 456L, LocalDate.parse("2017-01-08"), 8));
+     public TimeEntry update(long l, TimeEntry timeEntry) throws Exception {
 
-        TimeEntry updatedEntry = repo.update(
-                created.getId(),
-                new TimeEntry(321L, 654L, LocalDate.parse("2017-01-09"), 5));
 
-        TimeEntry expected = new TimeEntry(created.getId(), 321L, 654L, LocalDate.parse("2017-01-09"), 5);
-        assertThat(updatedEntry).isEqualTo(expected);
-        assertThat(repo.find(created.getId())).isEqualTo(expected);
+         updatedEntry
+
     }
 
-    public void delete() throws Exception {
+   /* public void delete() throws Exception {
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
         TimeEntry created = repo.create(new TimeEntry(123L, 456L, LocalDate.parse("2017-01-08"), 8));
 
