@@ -38,20 +38,27 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
         return result;
     }
 
-     public TimeEntry update(long l, TimeEntry timeEntry) throws Exception {
+     public TimeEntry update(long l, TimeEntry timeEntry){
+
+         TimeEntry updatedTimeEntry = new TimeEntry (
+                 l,
+                 timeEntry.getProjectId(),
+                 timeEntry.getUserId(),
+                 timeEntry.getDate(),
+                 timeEntry.getHours()
+         );
+
+         timeEntryHashMap.put(l, updatedTimeEntry);
+         return updatedTimeEntry;
 
 
-         updatedEntry
+     }
 
-    }
+   public TimeEntry delete(long l) {
 
-   /* public void delete() throws Exception {
-        InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
-        TimeEntry created = repo.create(new TimeEntry(123L, 456L, LocalDate.parse("2017-01-08"), 8));
-
-        repo.delete(created.getId());
-        assertThat(repo.list()).isEmpty();
-    }*/
+       TimeEntry deletedTimeEntry = timeEntryHashMap.get(l);
+       return timeEntryHashMap.remove(l);
+   }
 
 
 }
