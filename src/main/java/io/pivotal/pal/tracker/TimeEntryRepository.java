@@ -9,8 +9,7 @@ public interface TimeEntryRepository {
     public TimeEntry find(long l);
     public List<TimeEntry> list();
     public TimeEntry update(long l , TimeEntry timeEntry);
-    public TimeEntry delete(long l);
-
+    public void delete(long l);
 
 
 }

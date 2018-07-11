@@ -54,10 +54,10 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
 
      }
 
-   public TimeEntry delete(long l) {
+   public void delete(long l) {
 
        TimeEntry deletedTimeEntry = timeEntryHashMap.get(l);
-       return timeEntryHashMap.remove(l);
+       timeEntryHashMap.remove(l);
    }
 
 

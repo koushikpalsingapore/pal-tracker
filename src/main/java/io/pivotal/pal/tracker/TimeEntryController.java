@@ -63,8 +63,8 @@ public class TimeEntryController {
     @RequestMapping(value = "/time-entries/{id}", method = RequestMethod.DELETE, produces = "application/json")
     public ResponseEntity<TimeEntry> delete( @PathVariable("id") long id) {
         System.out.println("Delete Time>>>: " );
-        TimeEntry response = timeEntryRepository.delete(id);
-        return new ResponseEntity<TimeEntry>(response, HttpStatus.NO_CONTENT);
+        timeEntryRepository.delete(id);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
 
 
     }
