@@ -23,7 +23,7 @@ public class TimeEntryControllerTest {
     private TimeEntryController controller;
     private CounterService counterService;
     private GaugeService gaugeService;
-    
+
     @Before
     public void setUp() throws Exception {
         counterService = mock(CounterService.class);
